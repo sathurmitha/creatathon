@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #76453B;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end; /* Aligns to the right */
+            align-items: center;
+            background-image: url('bg.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .sign-up-box {
+            background-color: rgba(255, 248, 240, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            margin-right: 50px; 
+        }
+        h2 {
+            color: #5A3E2B;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #D1BFA9;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #FFF8F0;
+            color: #5A3E2B;
+        }
+
+        input::placeholder {
+            color: #A4876C;
+        }
+        .btn {
+            background-color: #A35A45;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #8E4D3B;
+        }
+        .error {
+            color: #B22222;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #5A3E2B;
+        }
+        .footer a {
+            color: #A35A45;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+        <div class="sign-up-box">
+            <h2>Restaurant Sign Up</h2>
+            <form id="signupForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <button type="submit" class="btn">Sign Up</button>
+                                <p class="error" id="error-message"></p>
+            </form>
+            <div class="footer">
+                <p>Already have an account?<a href="sign in page.html">Sign in</a> </p>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();  
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = "";
+                    if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match!";
+                return;
+            }
+            if (username.length < 3) {
+                errorMessage.textContent = "Username must be at least 3 characters long!";
+                return;
+            }
+            if (!validateEmail(email)) {
+                errorMessage.textContent = "Please enter a valid email!";
+                return;
+            }
+            if (!validatePhone(phone)) {
+                errorMessage.textContent = "Please enter a valid phone number!";
+                return;
+            }
+            alert("Sign-up successful! Welcome to the restaurant.");
+        });
+        function validateEmail(email) {
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return regex.test(email);
+        }
+        function validatePhone(phone) {
+            const regex = /^\d{10}$/; // Validates a 10-digit phone number
+            return regex.test(phone);
+        }
+    </script>
+</body>
+</html>

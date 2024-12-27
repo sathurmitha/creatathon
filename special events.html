@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Special Offers - Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #815E5B;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+        }
+
+        .events, .special-offers {
+            margin-top: 40px;
+        }
+
+        .events h2, .special-offers h2 {
+            color: black;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .event, .offer {
+            background-color: #8B635C;
+            margin: 15px 0;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .event h3, .offer h3 {
+            color: #fff;
+            font-size: 1.5em;
+        }
+
+        .event p, .offer p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .event .date, .offer .discount {
+            font-weight: bold;
+            font-family: "Lucida Console", "Courier New", monospace;
+            color: whitesmoke;
+        }
+
+        .offer-form {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .offer-form input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .offer-form button {
+            background-color: #895737;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .offer-form button:hover {
+            background-color: #654C4F;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #694A38;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Events & Special Offers</h1>
+
+        <!-- Upcoming Events -->
+        <div class="events">
+            <h2>Upcoming Events</h2>
+
+            <div class="event">
+                <img src="live music night.jpg" alt="live music" width="300" height="300" >
+                <h3>Live Music Night</h3>
+                <p class="date">December 15, 2024 | 7:00 PM - 10:00 PM</p>
+                <p>Join us for an unforgettable night of live music! Local bands will be performing in our dining area.</p>
+            </div>
+
+            <div class="event">
+                <img src="holiday buffet.jpg" alt="live music" width="300" height="300" >
+                <h3>Holiday Buffet</h3>
+                <p class="date">December 24, 2024 | 12:00 PM - 4:00 PM</p>
+                <p>Celebrate the season with our festive holiday buffet, featuring a wide variety of delicious dishes for all tastes.</p>
+            </div>
+
+            <div class="event">
+                <img src="new year.jpg" alt="live music" width="300" height="300" >
+                <h3>New Year's Eve Party</h3>
+                <p class="date">December 31, 2024 | 9:00 PM - Midnight</p>
+                <p>Ring in the New Year with champagne, live DJ, and a great time. RSVP now to secure your spot!</p>
+            </div>
+        </div>
+
+        
+        <div class="special-offers">
+            <h2>Special Offers</h2>
+
+            <div class="offer">
+                <h3>50% Off on Your First Order!</h3>
+                <p class="discount">Valid until December 31, 2024</p>
+                <p>New customers can enjoy a 50% discount on their first meal with us. Use code: <strong>NEW50</strong> at checkout.</p>
+            </div>
+
+            <div class="offer">
+                <h3>Buy One, Get One Free - Appetizers</h3>
+                <p class="discount">Valid Monday - Thursday</p>
+                <p>Enjoy our appetizers for half the price! Buy one appetizer and get another free. No code needed.</p>
+            </div>
+        </div>
+
+        
+        <div class="offer-form">
+            <h2>Get Exclusive Discounts</h2>
+            <p>Enter your email below to receive special offers and discounts straight to your inbox!</p>
+            <input type="text" id="email" placeholder="Enter your email...">
+            <button onclick="subscribe()">Subscribe</button>
+            <p id="responseMessage"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Restaurant Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function subscribe() {
+            var email = document.getElementById("email").value;
+            var responseMessage = document.getElementById("responseMessage");
+
+            if (email === "") {
+                responseMessage.style.color = "red";
+                responseMessage.textContent = "Please enter a valid email address.";
+            } else {
+                responseMessage.style.color = "green";
+                responseMessage.textContent = "Thank you for subscribing!";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Terms of Service - Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2980b9;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .toggle-btn {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1em;
+            border-radius: 4px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .toggle-btn:hover {
+            background-color: #3498db;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Privacy Policy & Terms of Service</h1>
+
+        <!-- Privacy Policy Section -->
+        <div class="section" id="privacy-policy">
+            <h2>Privacy Policy</h2>
+            <p>Welcome to our Privacy Policy page! We respect your privacy and are committed to protecting your personal information. This policy explains how we collect, use, and protect your data.</p>
+            <button class="toggle-btn" onclick="toggleSection('privacy-policy-details')">Read More</button>
+            <div id="privacy-policy-details" style="display:none;">
+                <p><strong>1. Information We Collect:</strong> We collect personal information when you visit our site, make a reservation, or place an order. This may include your name, email, phone number, and payment details.</p>
+                <p><strong>2. How We Use Your Information:</strong> We use your information to process orders, send promotional emails, and improve your experience.</p>
+                <p><strong>3. How We Protect Your Information:</strong> We implement security measures to protect your personal information. However, we cannot guarantee 100% security on the internet.</p>
+                <p><strong>4. Cookies:</strong> We use cookies to enhance your experience on our website. You can disable cookies through your browser settings, but this may affect the functionality of our site.</p>
+                <p><strong>5. Sharing Your Information:</strong> We do not sell or share your personal information with third parties except as necessary to provide our services.</p>
+            </div>
+        </div>
+
+        <!-- Terms of Service Section -->
+        <div class="section" id="terms-of-service">
+            <h2>Terms of Service</h2>
+            <p>By using our website and services, you agree to the following terms and conditions. Please read them carefully.</p>
+            <button class="toggle-btn" onclick="toggleSection('terms-of-service-details')">Read More</button>
+            <div id="terms-of-service-details" style="display:none;">
+                <p><strong>1. Use of Website:</strong> You agree to use our website for lawful purposes only and to comply with all applicable laws and regulations.</p>
+                <p><strong>2. Orders & Payments:</strong> All orders placed through our website are subject to availability. We reserve the right to cancel or modify orders as necessary.</p>
+                <p><strong>3. Account Responsibility:</strong> If you create an account, you are responsible for maintaining the confidentiality of your login details and account activity.</p>
+                <p><strong>4. Limitation of Liability:</strong> We are not responsible for any damages arising from the use or inability to use our website or services.</p>
+                <p><strong>5. Modifications to the Terms:</strong> We may update these terms of service from time to time. You are encouraged to review them regularly to stay informed of any changes.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Restaurant Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle sections visibility
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === "none") {
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

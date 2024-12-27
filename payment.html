@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2980b9;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 1.1em;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        .form-group input:focus {
+            border-color: #2980b9;
+        }
+
+        .button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2980b9;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #3498db;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        .message.success {
+            color: green;
+        }
+
+        .message.error {
+            color: red;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2980b9;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mobile Payment</h1>
+
+        <div class="form-group">
+            <label for="cardholder-name">Cardholder Name</label>
+            <input type="text" id="cardholder-name" placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="number" id="card-number" placeholder="1234 5678 9876 5432">
+        </div>
+
+        <div class="form-group">
+            <label for="expiry-date">Expiry Date (MM/YY)</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY">
+        </div>
+
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="number" id="cvv" placeholder="123">
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount" min="1">
+        </div>
+
+        <button class="button" onclick="processPayment()">Pay Now</button>
+
+        <div id="payment-message" class="message"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mobile Payment Demo</p>
+    </footer>
+
+    <script>
+        function processPayment() {
+            // Get input values
+            const cardholderName = document.getElementById("cardholder-name").value;
+            const cardNumber = document.getElementById("card-number").value;
+            const expiryDate = document.getElementById("expiry-date").value;
+            const cvv = document.getElementById("cvv").value;
+            const amount = document.getElementById("amount").value;
+
+            const paymentMessage = document.getElementById("payment-message");
+
+            // Simple validation
+            if (cardholderName === "" || cardNumber === "" || expiryDate === "" || cvv === "" || amount === "") {
+                paymentMessage.classList.remove("success");
+                paymentMessage.classList.add("error");
+                paymentMessage.textContent = "Please fill in all fields.";
+                return;
+            }
+
+            // Simulate a successful payment process (for demo purposes)
+            paymentMessage.classList.remove("error");
+            paymentMessage.classList.add("success");
+            paymentMessage.textContent = `Payment of $${amount} has been successfully processed! Thank you, ${cardholderName}.`;
+            
+            // Clear form
+            document.getElementById("cardholder-name").value = "";
+            document.getElementById("card-number").value = "";
+            document.getElementById("expiry-date").value = "";
+            document.getElementById("cvv").value = "";
+            document.getElementById("amount").value = "";
+        }
+    </script>
+
+</body>
+</html>

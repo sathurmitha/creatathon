@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to THE BISON Restaurant</title>
+    <style>          
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #7D5A50; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            background-image: url('download.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #FFD700; /* Gold color */
+        }
+
+        .container {
+            background-color: #B4846C;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 80%;
+            max-width: 600px;
+            margin-top: 70px; /* Adjusted for fixed navbar */
+        }
+
+        h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #A79277; /* Red color */
+            color: #ffffff;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #D1BB9E; /* Darker red */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="about us.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact information.html">Contact</a>
+        <a href="special events.html">Special Events</a>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to THE BISON Restaurant!</h1>
+        <p>We serve the finest dishes prepared with love and care. Click the button below to get started!</p>
+        <button onclick="document.location='sign in page.html'">GET STARTED</button>
+    </div>
+</body>
+</html>
